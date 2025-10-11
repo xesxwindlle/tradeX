@@ -9,7 +9,6 @@ import OrderBook from './components/OrderBook.vue';
 <template>
   <!-- <h1>Hello</h1> -->
   <!-- <Panel></Panel> -->
-
   <header class="header">
         <div class="header-brand">TradeX</div>
     </header>
