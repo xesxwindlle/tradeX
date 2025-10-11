@@ -5,6 +5,7 @@ console.log(c);
 </script>
 
 <template>
+  <!-- <h1>Hello</h1> -->
   <Panel></Panel>
 </template>
 
