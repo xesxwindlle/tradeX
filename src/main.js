@@ -1,4 +1,11 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import axios from 'axios';
+
+createApp(App).mount('#app');
+
+
+console.log(123);
+
+console.log(axios);
