@@ -6,6 +6,3 @@ import "@/assets/main.css";
 createApp(App).mount('#app');
 
 
-console.log(123);
-
-console.log(axios);
