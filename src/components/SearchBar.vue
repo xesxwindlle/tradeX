@@ -7,8 +7,7 @@ const wls = watchlistStore();
     <div class="search-bar">
         <form action="">
             <input type="text" v-model="wls.stock" placeholder="Enter Stock Symbol" autocomplete="off" spellcheck="false">
-            <button @click.prevent="wls.hey">Search</button>
-          
+            <button @click.prevent="wls.addWatching">Search</button>
         </form>
     </div>
 </template>

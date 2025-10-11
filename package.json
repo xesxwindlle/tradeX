@@ -16,7 +16,8 @@
     "axios": "^1.12.2",
     "pinia": "^3.0.3",
     "tailwindcss": "^4.1.14",
-    "vue": "^3.5.22"
+    "vue": "^3.5.22",
+    "yahoo-finance2": "^2.13.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
