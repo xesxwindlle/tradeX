@@ -1,13 +1,21 @@
 <script setup>
 import { watchlistStore } from '@/stores/watchlist_store';
+import { ref } from 'vue';
+
 const wls = watchlistStore();
+const symbol = ref("");
+
+function addWatching() {
+    wls.addWatching(symbol.value);
+    symbol.value = ''; 
+}
 
 </script>
 <template>
     <div class="search-bar">
         <form action="">
-            <input type="text" v-model="wls.stock" placeholder="Enter Stock Symbol" autocomplete="off" spellcheck="false">
-            <button @click.prevent="wls.addWatching">Search</button>
+            <input type="text" v-model="symbol" placeholder="Enter Stock Symbol" autocomplete="off" spellcheck="false">
+            <button @click.prevent="addWatching">Search</button>
         </form>
     </div>
 </template>

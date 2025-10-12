@@ -1,28 +1,26 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
-import yahooFinance from 'yahoo-finance2';
-
-
-// setInterval(()=> fetchStockData("MSFT"), 5000);
-
-// async function fetchStockData(stock) {
-//   const result = await yahooFinance.quoteSummary(stock, { modules: ['price'] });
-//   console.log(result);
-//   console.log(result.price.regularMarketPrice);
-// }
+import { getStockQuote } from "@/library/util";
 
 
 
 const watchings = ref(new Set());
-const stock = ref("");
+// const stock = ref("");
 
 const watchlistStore = defineStore("watchlist", () => {
 
 
-  function addWatching() { 
+  function addWatching(symbol) { 
     //if the stock exists...
-    watchings.value.add(stock);
+    watchings.value.add(symbol);
     console.log(watchings.value);
+  }
+
+  async function printQuote(symbol) {
+    const url = getStockQuote(symbol);
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data);
   }
 
   async function displayWatchings() {
@@ -35,18 +33,8 @@ const watchlistStore = defineStore("watchlist", () => {
   }
 
 
-
-
-
-// setInterval(()=> fetchStockData("MSFT"), 5000);
-
-// async function fetchStockData(stock) {
-//   const result = await yahooFinance.quoteSummary(stock, { modules: ['price'] });
-//   console.log(result);
-//   console.log(result.price.regularMarketPrice);
-// }
-
-  return { addStock, };
+  return { addWatching, printQuote};
 });
 
 export { watchlistStore };
+

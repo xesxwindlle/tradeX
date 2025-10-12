@@ -1,4 +1,3 @@
-const c = "Im a constant"
+const API_KEY = "d3lgj81r01qq28endo4gd3lgj81r01qq28endo50";
 
-
-export {c};
+export {API_KEY};

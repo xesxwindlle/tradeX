@@ -4,6 +4,7 @@ import { ref, onMounted } from 'vue';
 import { watchlistStore } from '@/stores/watchlist_store';
 const wls = watchlistStore();
 
+
 </script>
 
 <template>
