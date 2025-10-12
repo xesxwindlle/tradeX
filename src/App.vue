@@ -30,4 +30,6 @@ import OrderBook from './components/OrderBook.vue';
 
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>
