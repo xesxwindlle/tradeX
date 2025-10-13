@@ -13,8 +13,8 @@ function addWatching() {
 </script>
 <template>
     <div>
-        <form action="">
-            <input id="search-bar"type="text" v-model="symbol" placeholder="Enter Stock Symbol" autocomplete="off" spellcheck="false">
+        <form  @submit.prevent="submitForm" action="">
+            <input @keyup.enter.prevent="addWatching" id="search-bar"type="text" v-model="symbol" placeholder="Enter Stock Symbol" autocomplete="off" spellcheck="false">
             <i class="fa-solid fa-magnifying-glass" @click.prevent="addWatching"></i>
             <!-- <button id="search-btn"@click.prevent="addWatching">Search</button> -->
         </form>
