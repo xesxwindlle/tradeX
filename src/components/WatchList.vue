@@ -18,8 +18,8 @@ onMounted (() => {
             <div class="list-item">
                 <table>
                     <thead>
-                        <tr>
-                            <th>Symbol</th>
+                        <tr class="first-row">
+                            <th scope="row">Symbol</th>
                             <th>Current Price</th>
                             <th>Price Change</th>
                             <th>Price Change (%)</th>
@@ -31,7 +31,7 @@ onMounted (() => {
                     </thead>
                     <tbody>
                         <tr v-for="symbol in wls.watchings.keys()">
-                            <td>{{ symbol }}</td>
+                            <th scope="row">{{ symbol }}</th>
                             <td>{{ wls.getCurrenPrice(symbol) }}</td>
                             <td :class="{'gain': wls.getDayChange(symbol) > 0, 'loss': wls.getDayChange(symbol)< 0, 'static' : wls.getDayChange(symbol)}">{{ wls.getDayChange(symbol) }}</td>
                             <td :class="{'gain': wls.getDayChange(symbol) > 0, 'loss': wls.getDayChange(symbol)< 0, 'static' : wls.getDayChange(symbol)}">{{ wls.getPercentChange(symbol) }}</td>
