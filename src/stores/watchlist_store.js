@@ -17,9 +17,13 @@ const watchlistStore = defineStore("watchlist", () => {
 
   async function fetchQuote(symbol) {
     const url = getStockQuote(symbol);
-    const res = await fetch(url);
-    const quote = await res.json();
-    watchings.value.set(symbol, quote);
+    try {
+      const res = await fetch(url);
+      const quote = await res.json();
+      watchings.value.set(symbol, quote);
+    } catch (fail) {
+      return;
+    }
   }
 
   function refreshWatchings() {
